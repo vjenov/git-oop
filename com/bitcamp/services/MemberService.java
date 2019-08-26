@@ -1,6 +1,7 @@
 package com.bitcamp.services;
-
 import com.bitcamp.domains.MemberBean;
+
+import sun.security.util.ArrayUtil;
 /**
  * 요구사항 (기능정의)
  * <사용자기능>
@@ -17,6 +18,7 @@ import com.bitcamp.domains.MemberBean;
 public class MemberService {
 	private MemberBean[] members;
 	private int count;
+	private MemberBean[] tempMembers;
 	
 	public MemberService() {
 		members = new MemberBean[10];
@@ -64,18 +66,32 @@ public class MemberService {
 		String msg = "잘못입력하셨습니다.";
 		String id = param.getId();
 		String pw = param.getPw();
-		MemberBean member = new MemberBean();
 		for(int i = 0; i < count; i++) {
-			System.out.println(i);
 			if(id.equals(members[i].getId())
 					&& pw.equals(members[i].getPw())) {
-					members = Arrayutils.remove(members.i);
+				System.out.println(members[i]);
+				System.out.println(i);
+					for(int j = 0; j < count-1; j++) {
+						System.out.println(j);
+						System.out.println(members[j]);
+						if (j >= i) {
+							members[j] = members[i+1];
+							System.out.println(j);
+							System.out.println(members[j]);
 					}
-			break;
+				}
 			}
+			msg = "탈퇴완료";
+		}
 		return msg;
 	}
-	
+/*
+} else {
+	for(int j = i; j < count-1; j++) {
+		System.out.println(members[j]);
+		members[j] = members[i+1];
+	}
+	*/
 	/**
 	 * 
 	 * 5. 아이디 체크
