@@ -18,7 +18,6 @@ import sun.security.util.ArrayUtil;
 public class MemberService {
 	private MemberBean[] members;
 	private int count;
-	private MemberBean[] tempMembers;
 	
 	public MemberService() {
 		members = new MemberBean[10];
