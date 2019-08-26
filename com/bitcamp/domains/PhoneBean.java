@@ -7,7 +7,7 @@ package com.bitcamp.domains;
  * 나는 {금성}에서 만든 {집전화기}를 사용해서 {길동이}에게 {안녕}이라고 전화했다.  
  */
 public class PhoneBean {
-	public final static String[] KIND = {"집전화기", "2G폰", "아이폰", "안드로이드"};
+	public final static String KIND = "집전화기";
 	private String company, call, receiver;
 
 	public String getCompany() {
@@ -33,4 +33,9 @@ public class PhoneBean {
 	public void setReceiver(String receiver) {
 		this.receiver = receiver;
 	}
+	@Override
+		public String toString() {
+			// TODO Auto-generated method stub
+			return String.format("나는 %s에서 만든 %s를 사용해서 %s에게 %s라고 통화했다.", company, KIND, receiver, call);
+		}
 }

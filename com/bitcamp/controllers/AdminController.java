@@ -1,12 +1,13 @@
 package com.bitcamp.controllers;
 import javax.swing.JOptionPane;
 import com.bitcamp.domains.MemberBean;
-import com.bitcamp.services.MemberService;
+import com.bitcamp.serviceimples.AdminServiceImpl;
+import com.bitcamp.services.AdminService;
 public class AdminController {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MemberService service = new MemberService();
+		AdminService service = new AdminServiceImpl();
 		MemberBean member = null;
 		String msg = "";
 		String[] arr = {};

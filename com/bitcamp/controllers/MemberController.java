@@ -1,11 +1,12 @@
 package com.bitcamp.controllers;
 import javax.swing.JOptionPane;
-import com.bitcamp.services.MemberService;
 import com.bitcamp.domains.MemberBean;
+import com.bitcamp.serviceimples.MemberServiceImpl;
+import com.bitcamp.services.MemberService;
 public class MemberController {
 
 	public static void main(String[] args) {
-		MemberService service = new MemberService();
+		MemberService service = new MemberServiceImpl();
 		MemberBean member = null;
 		String msg = "";
 		String[] arr = {};
@@ -79,7 +80,6 @@ public class MemberController {
 				break;
 			}
 		}
-
 	}
 
 }
